@@ -1,37 +1,43 @@
 # Saad Mirza — Portfolio
 
-A Vite + React + TypeScript portfolio scaffold built around the supplied résumé. The portrait-video/frame pipeline is intentionally left optional because no source video was supplied. Until frames are added, the site uses a lightweight CSS portrait placeholder and still works end-to-end.
+A Vite + React + TypeScript portfolio showcasing my journey as a Data Analyst, my projects, technical skills, and education.
 
-## Run locally
+## Run Locally
 
 ```bash
 npm install
 npm run dev
 ```
 
-Production checks:
+## Production Build
 
 ```bash
 npm run build
 npm run preview
 ```
 
-## Add a source video later
+## Project Structure
 
-1. Place your source clip at `video.mp4` in the project root.
-2. Extract source frames with `ffmpeg -i video.mp4 -start_number 0 full/f%03d.png`.
-3. Run your segmentation/masking workflow to generate transparent WebP frames in `public/frames/lg/` and half-size frames in `public/frames/sm/`.
-4. Update `public/frames/manifest.json` with `w`, `h`, `count`, and `shots` (`from`, `to`, `box`, `cx`).
+- `src/data.ts` — Portfolio content and project details
+- `src/engine/director.ts` — Lenis and GSAP scroll management
+- `src/engine/frames.ts` — Optional animation frame loader
+- `src/engine/hooks.ts` — Scroll director subscription hook
+- `src/components/` — Reusable portfolio components
+- `src/scenes/` — Hero, About, Work, Journey, Skills, Awards, and Contact sections
+- `src/styles.css` — Main styles and responsive design
+- `public/resume.pdf` — Portfolio résumé
 
-`src/engine/frames.ts` already loads the manifest, selects the mobile/desktop frame directory, decodes frames, and tolerates missing frame assets. Keep the manifest count at `0` until actual transparent frames are present.
+## Technologies Used
 
-## Project structure
+- React
+- TypeScript
+- Vite
+- GSAP
+- Lenis
+- CSS
 
-- `src/data.ts` — all portfolio content
-- `src/engine/director.ts` — Lenis + GSAP ticker scroll director
-- `src/engine/frames.ts` — optional frame loader
-- `src/engine/hooks.ts` — director subscription hook
-- `src/components/` — Stage, Chrome, Odometer, TiltCard
-- `src/scenes/` — Hero, About, Work, Journey, Skills, Awards, Contact
-- `src/styles.css` — visual system and responsive styling
-- `public/resume.pdf` — supplied résumé image converted to a PDF
+## Author
+
+**Saad Mirza**
+
+GitHub: [Saad07-coder](https://github.com/Saad07-coder)
